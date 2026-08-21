@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Para la mujer que hace mi mundo más bonito ❤️</title>
+
+  <style>
+    /* ===== VARIABLES Y ESTILOS GLOBALES ===== */
+    :root {
+      --rosa-suave: #ffe6f0;
+      --rosa-claro: #ffd1e3;
+      --rosa-medio: #ffb3d1;
+      --rosa-fuerte: #ff8fab;
+      --rojo-romantico: #d6336c;
+      --rojo-oscuro: #a61e4d;
+      --blanco: #ffffff;
+      --crema: #fff9f0;
+      --dorado-suave: #d4af37;
+      --dorado-claro: #f0d68a;
+      --gris-oscuro: #4a4a4a;
+      --texto-suave: #6b5b5b;
+      --sombra-suave: 0 8px 20px rgba(214, 51, 108, 0.15);
+      --sombra-media: 0 12px 30px rgba(214, 51, 108, 0.25);
+      --borde-redondo: 16px;
+      --transicion-suave: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(145deg, #fff5f7 0%, #ffe6f0 30%, #fff0f5 60%, #ffe6f0 100%);
+      color: var(--gris-oscuro);
+      line-height: 1.7;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Tipografía romántica para títulos (Google Fonts fallback) */
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+    h1, h2, h3, .titulo-romantico {
+      font-family: 'Dancing Script', 'Brush Script MT', cursive;
+      font-weight: 700;
+      color: var(--rojo-romantico);
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 15px rgba(214, 51, 108, 0.2);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--dorado-suave), transparent);
+      border-radius: 2px;
+    }
+
+    /* ===== CONTENEDORES Y SECCIONES ===== */
+    .seccion {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 768px) {
+      .seccion {
+        padding: 5rem 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .seccion {
+        padding: 6rem 3rem;
+      }
+    }
+
+    /* ===== ANIMACIONES GLOBALES ===== */
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(3deg); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.08); }
+    }
+
+    @keyframes caerPetalo {
+      0% { transform: translateY(-5vh) translateX(0) rotate(0deg); opacity: 0.9; }
+      100% { transform: translateY(105vh) translateX(80px) rotate(360deg); opacity: 0.2; }
+    }
+
+    @keyframes brillar {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ===== ELEMENTOS DECORATIVOS DE FONDO ===== */
+    .decoracion-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .corazon-flotante {
+      position: absolute;
+      color: rgba(214, 51, 108, 0.2);
+      animation: flotar 8s infinite ease-in-out;
+      user-select: none;
+      pointer-events: none;
+      font-size: 2rem;
+    }
+
+    .petalo {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 30% 30%, #ffb3d1, #ff8fab);
+      border-radius: 50% 0 50% 50%;
+      animation: caerPetalo linear infinite;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ===== BOTONES ===== */
+    .boton-romantico {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--rosa-fuerte), var(--rojo-romantico));
+      color: var(--blanco);
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: var(--transicion-suave);
+      box-shadow: var(--sombra-media);
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      margin: 0.8rem;
+      min-width: 200px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .boton-romantico:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 35px rgba(214, 51, 108, 0.4);
+      background: linear-gradient(135deg, var(--rojo-romantico), var(--rosa-fuerte));
+    }
+
+    .boton-romantico:active {
+      transform: translateY(0px) scale(0.98);
+    }
+
+    .boton-romantico::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .boton-romantico:hover::before {
+      opacity: 1;
+    }
+
+    /* ===== TARJETAS Y GLASSMORPHISM ===== */
+    .tarjeta-vidrio {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--borde-redondo);
+      box-shadow: var(--sombra-suave);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 2rem;
+      transition: var(--transicion-suave);
+    }
+
+    .tarjeta-vidrio:hover {
+      box-shadow: var(--sombra-media);
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    /* ===== SECCIÓN 1: PORTADA HERO ===== */
+    #inicio {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    #inicio .contenido-hero {
+      max-width: 800px;
+    }
+
+    #inicio .frase-secundaria {
+      font-size: 1.4rem;
+      color: var(--texto-suave);
+      margin-bottom: 2rem;
+      font-style: italic;
+      animation: aparecer 1.5s ease-out 0.4s both;
+    }
+
+    #inicio h1 {
+      animation: aparecer 1.8s ease-out 0.2s both;
+    }
+
+    #inicio .boton-romantico {
+      animation: aparecer 1.8s ease-out 0.6s both;
+    }
+
+    /* ===== SECCIÓN 2: GALERÍA ===== */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+      .galeria-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    .galeria-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: var(--sombra-suave);
+      transition: var(--transicion-suave);
+      aspect-ratio: 4/3;
+      background: var(--rosa-claro);
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.03);
+      box-shadow: var(--sombra-media);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .galeria-frase {
+      font-style: italic;
+      color: var(--texto-suave);
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-imagen {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: aparecer 0.4s ease-out;
+    }
+
+    /* ===== SECCIÓN 3: POEMA ===== */
+    .tarjeta-poema {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--crema);
+      position: relative;
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+      text-align: left;
+      border-left: 4px solid var(--dorado-suave);
+      background-image: linear-gradient(var(--crema), var(--blanco));
+    }
+
+    .tarjeta-poema::before {
+      content: '"';
+      font-size: 5rem;
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      color: var(--dorado-suave);
+      opacity: 0.5;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+
+    .tarjeta-poema p {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 1.1rem;
+      color: var(--gris-oscuro);
+      white-space: pre-line;
+      line-height: 2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tarjeta-poema .frase-final {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-style: italic;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: var(--rojo-romantico);
+    }
+
+    /* ===== SECCIÓN 4: LA CARTA ===== */
+    .sobre-contenedor {
+      position: relative;
+      width: 260px;
+      height: 200px;
+      margin: 3rem auto;
+      cursor: pointer;
+      perspective: 1200px;
+    }
+
+    .sobre {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+      transform-origin: top center;
+    }
+
+    .sobre.abierto {
+      transform: rotateX(180deg);
+    }
+
+    .sobre-frente, .sobre-trasero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--crema);
+      box-shadow: var(--sombra-media);
+      border: 2px solid var(--dorado-claro);
+    }
+
+    .sobre-trasero {
+      background: var(--blanco);
+      transform: rotateX(180deg);
+    }
+
+    .sobre-sello {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      animation: latido 2s infinite;
+      z-index: 3;
+      color: var(--rojo-romantico);
+    }
+
+    .carta-papel {
+      position: absolute;
+      width: 90%;
+      max-width: 500px;
+      background: var(--blanco);
+      border-radius: 8px;
+      box-shadow: var(--sombra-media);
+      padding: 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      transition: all 0.8s ease;
+      z-index: -1;
+      margin: 0 auto;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .carta-papel.visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      z-index: 10;
+    }
+
+    .carta-papel h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--rojo-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .carta-papel .mensaje-grande {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--rojo-romantico);
+      margin: 1rem 0;
+      line-height: 1.4;
+    }
+
+    .carta-papel .mensaje-texto {
+      color: var(--gris-oscuro);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 1rem 0;
+    }
+
+    .pregunta-final {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--rojo-romantico);
+      margin: 1.5rem 0;
+    }
+
+    .botones-respuesta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ===== CELEBRACIÓN ===== */
+    .celebracion-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2000;
+      background: rgba(255, 240, 245, 0.95);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .celebracion-overlay.activo {
+      display: flex;
+    }
+
+    .celebracion-overlay h2 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: var(--rojo-romantico);
+      animation: latido 1.5s infinite;
+    }
+
+    .celebracion-overlay .sub-mensaje {
+      font-size: 1.8rem;
+      color: var(--rojo-oscuro);
+      font-family: 'Dancing Script', cursive;
+      margin-top: 1rem;
+    }
+
+    /* ===== FLORES ===== */
+    .flores-contenedor {
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .flor {
+      font-size: 3rem;
+      animation: flotar 6s infinite ease-in-out;
+      display: inline-block;
+      transition: var(--transicion-suave);
+    }
+
+    .flor:nth-child(odd) {
+      animation-duration: 7s;
+      animation-delay: 0.5s;
+    }
+
+    .flor:nth-child(3n) {
+      animation-duration: 5s;
+      animation-delay: 1s;
+    }
+
+    /* ===== SECCIÓN FINAL ===== */
+    #final {
+      text-align: center;
+    }
+
+    #final .firma {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: var(--rojo-oscuro);
+      margin-top: 2rem;
+    }
+
+    /* ===== BOTÓN DE MÚSICA FLOTANTE ===== */
+    .boton-musica {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 500;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 50px;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid var(--rosa-claro);
+      box-shadow: var(--sombra-media);
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transicion-suave);
+      font-weight: 600;
+      color: var(--rojo-romantico);
+      letter-spacing: 0.5px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .boton-musica:hover {
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-3px);
+    }
+
+    .boton-musica.reproduciendo {
+      background: rgba(214, 51, 108, 0.15);
+      border-color: var(--rojo-romantico);
+    }
+
+    /* ===== RESPONSIVE AJUSTES FINOS ===== */
+    @media (max-width: 480px) {
+      .boton-romantico {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        min-width: 160px;
+        margin: 0.5rem;
+      }
+
+      .tarjeta-poema {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .tarjeta-poema p {
+        font-size: 0.95rem;
+      }
+
+      .carta-papel {
+        padding: 1.2rem;
+        width: 95%;
+        max-height: 70vh;
+      }
+
+      .carta-papel h3 {
+        font-size: 1.3rem;
+      }
+
+      .carta-papel .mensaje-grande {
+        font-size: 1.1rem;
+      }
+
+      .pregunta-final {
+        font-size: 1.3rem;
+      }
+
+      .galeria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .galeria-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Utilidades para evitar overflow */
+    img, svg, video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== DECORACIÓN DE FONDO (CORAZONES FLOTANTES Y PÉTALOS) ===== -->
+  <div class="decoracion-fondo" id="decoracionFondo">
+    <!-- Los corazones y pétalos se generarán dinámicamente con JavaScript -->
+  </div>
+
+  <!-- ===== BOTÓN DE MÚSICA FLOTANTE ===== -->
+  <button class="boton-musica" id="botonMusica" title="Reproducir música romántica">
+    🎵 Música
+  </button>
+
+  <!-- ===== SECCIÓN 1: PORTADA / HERO ===== -->
+  <section id="inicio">
+    <div class="contenido-hero">
+      <h1>Para la mujer que hace mi mundo más bonito ❤️</h1>
+      <p class="frase-secundaria">"Hay algo que quiero decirte..."</p>
+      <button class="boton-romantico" id="btnComenzar">
+        Comenzar nuestra historia ❤️
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 2: GALERÍA DE FOTOS ===== -->
+  <section id="galeria" class="seccion">
+    <h2>Algunos momentos que quiero guardar para siempre ❤️</h2>
+    <div class="galeria-grid" id="galeriaGrid">
+      <!-- Las imágenes se insertarán dinámicamente con JavaScript -->
+    </div>
+    <p class="galeria-frase">"Cada recuerdo contigo tiene un lugar especial en mi corazón."</p>
+  </section>
+
+  <!-- ===== SECCIÓN 3: POEMA ===== -->
+  <section id="poema" class="seccion">
+    <h2>Para mi princesa 🌹</h2>
+    <div class="tarjeta-vidrio tarjeta-poema" id="tarjetaPoema">
+      <p id="textoPoema"></p>
+      <p class="frase-final">"Y esto apenas es el comienzo..."</p>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 4: LA CARTA ===== -->
+  <section id="carta" class="seccion">
+    <h2>Hay algo que quiero preguntarte...</h2>
+    <p style="font-size: 1.3rem; color: var(--texto-suave); margin-bottom: 1.5rem;">
+      💌 Una carta para ti 💌
+    </p>
+
+    <!-- Sobre interactivo -->
+    <div class="sobre-contenedor" id="sobreContenedor">
+      <div class="sobre" id="sobre">
+        <div class="sobre-frente">
+          <span class="sobre-sello">❤️</span>
+        </div>
+        <div class="sobre-trasero">
+          <!-- Detrás del sobre -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón para abrir la carta -->
+    <div style="margin: 1.5rem 0;">
+      <button class="boton-romantico" id="btnAbrirCarta">
+        Abrir carta 💌
+      </button>
+    </div>
+
+    <!-- Contenido de la carta (aparece después de abrir) -->
+    <div class="carta-papel" id="cartaPapel">
+      <h3>MI PRINCESA HERMOSA ❤️</h3>
+      <div class="mensaje-grande">
+        POR FAVOR, PERMÍTEME SER TU NOVIO.
+      </div>
+      <div class="mensaje-texto">
+         Mi niña Diana Quiero conocerte más, compartir momentos contigo, hacerte sonreír y construir poco a poco algo bonito a tu lado.<br><br>
+        No te prometo una historia perfecta,<br>
+        pero sí prometo poner todo de mi parte<br>
+        para que cada capítulo valga la pena.
+      </div>
+      <div class="pregunta-final">
+        ¿Quieres ser mi novia? ❤️
+      </div>
+      <div class="botones-respuesta">
+        <button class="boton-romantico" id="btnSi">Sí ❤️</button>
+        <button class="boton-romantico" id="btnClaroQueSi">¡Claro que sí! 🥹❤️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 5: FLORES ===== -->
+  <section id="flores" class="seccion" style="display: none;">
+    <h2>Para ti, porque mereces todas las flores del mundo 🌹</h2>
+    <div class="flores-contenedor" id="floresContenedor">
+      <!-- Las flores se generarán dinámicamente -->
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 6: FINAL ===== -->
+  <section id="final" class="seccion" style="display: none;">
+    <h2>Gracias por llegar a mi vida ❤️</h2>
+    <p style="font-size: 1.3rem; color: var(--texto-suave); margin: 1.5rem 0;">
+      Espero que esta sea solamente la primera página de nuestra historia.
+    </p>
+    <div class="firma" id="firmaFinal">
+      Con cariño,<br>[MI NOMBRE] ❤️
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX PARA GALERÍA ===== -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img src="" alt="Foto ampliada" class="lightbox-imagen" id="lightboxImagen">
+  </div>
+
+  <!-- ===== OVERLAY DE CELEBRACIÓN ===== -->
+  <div class="celebracion-overlay" id="celebracionOverlay">
+    <h2>¡SABÍA QUE DIRÍAS QUE SÍ! ❤️🥹</h2>
+    <p class="sub-mensaje">"Ahora comienza nuestra historia..."</p>
+    <!-- Decoración de celebración se genera dinámicamente -->
+  </div>
+
+  <script>
+    // ===== PERSONALIZACIÓN =====
+    // ═══════════════════════════════════════════════════════════════════
+    // Aquí puedes editar fácilmente los textos y nombres de tu página.
+    // ═══════════════════════════════════════════════════════════════════
+
+    const nombreDeElla = 'Mi Diana hermosa';              // Coloca el nombre de ella
+    const miNombre = 'omar';                // Coloca tu nombre aquí
+
+    const poema = `Aunque estés lejos de mí,
+quiero que nunca olvides
+que aquí hay un corazón
+que piensa en ti todos los días.
+
+    Tal vez nos separen kilómetros,
+pero mi corazón ya encontró
+su lugar contigo.
+
+Y aunque nuestra historia sea a distancia,
+quiero que sepas que lo que siento por ti
+es muy real.
+
+No sé qué nos espera más adelante,
+pero sí sé que quiero descubrirlo contigo.
+
+Porque eres mi princesa,
+la persona con la que me gusta hablar todos los días,
+la que logra sacarme una sonrisa
+sin siquiera estar aquí.`;
+
+    const mensajeCarta = `Quiero conocerte más, compartir momentos contigo, hacerte sonreír y construir poco a poco algo bonito a tu lado.
+
+    No te prometo una historia perfecta,
+    pero sí prometo poner todo de mi parte
+    para que cada capítulo valga la pena.`;
+
+    const cancion = 'audio/cancion.mp3';  // Ruta de tu canción romántica
+
+    // ═══════════════════════════════════════════════════════════════════
+    // NO NECESITAS MODIFICAR NADA DESPUÉS DE ESTA LÍNEA
+    // ═══════════════════════════════════════════════════════════════════
+
+    // ===== REFERENCIAS A ELEMENTOS DEL DOM =====
+    const btnComenzar = document.getElementById('btnComenzar');
+    const btnAbrirCarta = document.getElementById('btnAbrirCarta');
+    const sobre = document.getElementById('sobre');
+    const cartaPapel = document.getElementById('cartaPapel');
+    const btnSi = document.getElementById('btnSi');
+    const btnClaroQueSi = document.getElementById('btnClaroQueSi');
+    const celebracionOverlay = document.getElementById('celebracionOverlay');
+    const seccionFlores = document.getElementById('flores');
+    const seccionFinal = document.getElementById('final');
+    const floresContenedor = document.getElementById('floresContenedor');
+    const galeriaGrid = document.getElementById('galeriaGrid');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImagen = document.getElementById('lightboxImagen');
+    const botonMusica = document.getElementById('botonMusica');
+    const textoPoema = document.getElementById('textoPoema');
+    const firmaFinal = document.getElementById('firmaFinal');
+    const decoracionFondo = document.getElementById('decoracionFondo');
+
+    // ===== INICIALIZACIÓN DE CONTENIDO PERSONALIZABLE =====
+    textoPoema.textContent = poema;
+    firmaFinal.innerHTML = `Con cariño,<br>${miNombre} ❤️`;
+
+    // Actualizar el título de la página con el nombre de ella
+    document.title = `Para ${nombreDeElla} ❤️`;
+
+    // ===== GENERAR CORAZONES FLOTANTES DE FONDO =====
+    function generarCorazonesFondo() {
+      const cantidad = 14;
+      const emojis = ['❤️', '💕', '✨', '💖', '🌹', '💗'];
+      for (let i = 0; i < cantidad; i++) {
+        const corazon = document.createElement('span');
+        corazon.classList.add('corazon-flotante');
+        corazon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        corazon.style.left = Math.random() * 95 + '%';
+        corazon.style.top = Math.random() * 90 + '%';
+        corazon.style.fontSize = (1.2 + Math.random() * 2) + 'rem';
+        corazon.style.animationDuration = (7 + Math.random() * 8) + 's';
+        corazon.style.animationDelay = (Math.random() * 5) + 's';
+        corazon.style.opacity = 0.3 + Math.random() * 0.4;
+        decoracionFondo.appendChild(corazon);
+      }
+    }
+
+    // ===== GENERAR PÉTALOS CAYENDO =====
+    function generarPetalos() {
+      const cantidad = 20;
+      for (let i = 0; i < cantidad; i++) {
+        const petalo = document.createElement('div');
+        petalo.classList.add('petalo');
+        petalo.style.left = Math.random() * 100 + '%';
+        petalo.style.top = '-20px';
+        petalo.style.animationDuration = (8 + Math.random() * 10) + 's';
+        petalo.style.animationDelay = (Math.random() * 12) + 's';
+        petalo.style.transform = `rotate(${Math.random() * 360}deg)`;
+        petalo.style.width = (12 + Math.random() * 14) + 'px';
+        petalo.style.height = (12 + Math.random() * 14) + 'px';
+        petalo.style.opacity = 0.5 + Math.random() * 0.4;
+        decoracionFondo.appendChild(petalo);
+      }
+    }
+
+    // ===== GALERÍA DE FOTOS =====
+    function cargarGaleria() {
+      const numFotos = 6;
+      const fotos = [];
+      for (let i = 1; i <= numFotos; i++) {
+        fotos.push(`img/foto${i}.jpg`);
+      }
+
+      fotos.forEach((src, index) => {
+        const item = document.createElement('div');
+        item.classList.add('galeria-item');
+        item.setAttribute('data-index', index);
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Momento ${index + 1}`;
+        img.loading = 'lazy';
+        // Fallback por si la imagen no existe, mostrar placeholder de color
+        img.onerror = function() {
+          this.style.display = 'none';
+          this.parentElement.style.background = 'linear-gradient(135deg, #ffd1e3, #ffb3d1)';
+          this.parentElement.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:white;">❤️</div>`;
+        };
+
+        item.appendChild(img);
+        item.addEventListener('click', () => abrirLightbox(src));
+        galeriaGrid.appendChild(item);
+      });
+    }
+
+    // ===== LIGHTBOX =====
+    function abrirLightbox(src) {
+      lightboxImagen.src = src;
+      lightboxOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarLightbox() {
+      lightboxOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxOverlay.addEventListener('click', cerrarLightbox);
+
+    // ===== ABRIR CARTA =====
+    btnAbrirCarta.addEventListener('click', () => {
+      sobre.classList.toggle('abierto');
+      setTimeout(() => {
+        cartaPapel.classList.add('visible');
+        // Hacer scroll hacia la carta
+        cartaPapel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 500);
+      btnAbrirCarta.disabled = true;
+      btnAbrirCarta.textContent = 'Carta abierta 💌';
+    });
+
+    // También permitir clic en el sobre para abrir
+    document.getElementById('sobreContenedor').addEventListener('click', () => {
+      if (!sobre.classList.contains('abierto')) {
+        btnAbrirCarta.click();
+      }
+    });
+
+    // ===== CELEBRACIÓN =====
+    function lanzarCelebracion() {
+      celebracionOverlay.classList.add('activo');
+      document.body.style.overflow = 'hidden';
+
+      // Crear corazones y pétalos en la celebración
+      const celebracionDecor = document.createElement('div');
+      celebracionDecor.style.position = 'absolute';
+      celebracionDecor.style.top = '0';
+      celebracionDecor.style.left = '0';
+      celebracionDecor.style.width = '100%';
+      celebracionDecor.style.height = '100%';
+      celebracionDecor.style.pointerEvents = 'none';
+      celebracionDecor.style.zIndex = '1';
+      celebracionOverlay.appendChild(celebracionDecor);
+
+      const emojis = ['❤️', '🌹', '💖', '🥹', '💕', '✨', '💗', '🌷', '💐', '🎉', '💘'];
+
+      for (let i = 0; i < 50; i++) {
+        const elemento = document.createElement('span');
+        elemento.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        elemento.style.position = 'absolute';
+        elemento.style.fontSize = (1.5 + Math.random() * 3) + 'rem';
+        elemento.style.left = Math.random() * 95 + '%';
+        elemento.style.top = '-10%';
+        elemento.style.animation = `caerPetalo ${3 + Math.random() * 5}s linear ${Math.random() * 3}s forwards`;
+        elemento.style.opacity = 0.9;
+        celebracionDecor.appendChild(elemento);
+      }
+
+      // Mostrar secciones de flores y final después de unos segundos
+      setTimeout(() => {
+        celebracionOverlay.classList.remove('activo');
+        document.body.style.overflow = '';
+        seccionFlores.style.display = 'block';
+        generarFlores();
+        setTimeout(() => {
+          seccionFinal.style.display = 'block';
+          seccionFinal.scrollIntoView({ behavior: 'smooth' });
+        }, 1500);
+      }, 4000);
+    }
+
+    btnSi.addEventListener('click', lanzarCelebracion);
+    btnClaroQueSi.addEventListener('click', lanzarCelebracion);
+
+    // ===== GENERAR FLORES =====
+    function generarFlores() {
+      const floresEmojis = ['🌹', '🌸', '💐', '🌷', '🌺', '🌻', '🌼', '💮', '🏵️', '🌹'];
+      const cantidad = 18;
+      for (let i = 0; i < cantidad; i++) {
+        const flor = document.createElement('span');
+        flor.classList.add('flor');
+        flor.textContent = floresEmojis[Math.floor(Math.random() * floresEmojis.length)];
+        flor.style.fontSize = (2 + Math.random() * 2.5) + 'rem';
+        flor.style.animationDelay = (Math.random() * 3) + 's';
+        flor.style.animationDuration = (5 + Math.random() * 5) + 's';
+        flor.style.margin = '0.3rem';
+        floresContenedor.appendChild(flor);
+      }
+      seccionFlores.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ===== MÚSICA =====
+    let audio = null;
+    let musicaActiva = false;
+
+    botonMusica.addEventListener('click', () => {
+      if (!audio) {
+        audio = new Audio(cancion);
+        audio.loop = true;
+        audio.volume = 0.5;
+      }
+
+      if (musicaActiva) {
+        audio.pause();
+        musicaActiva = false;
+        botonMusica.classList.remove('reproduciendo');
+        botonMusica.textContent = '🎵 Música';
+      } else {
+        audio.play().then(() => {
+          musicaActiva = true;
+          botonMusica.classList.add('reproduciendo');
+          botonMusica.textContent = '💖 Sonando...';
+        }).catch(err => {
+          console.warn('No se pudo reproducir audio automáticamente:', err);
+          alert('Haz clic de nuevo para reproducir la música 🎵');
+        });
+      }
+    });
+
+    // ===== SCROLL SUAVE PARA BOTÓN COMENZAR =====
+    btnComenzar.addEventListener('click', () => {
+      document.getElementById('galeria').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ===== INICIALIZAR TODO =====
+    function inicializar() {
+      generarCorazonesFondo();
+      generarPetalos();
+      cargarGaleria();
+
+      // Verificar si hay imágenes de ejemplo, si no crear placeholders
+      setTimeout(() => {
+        const items = document.querySelectorAll('.galeria-item img');
+        items.forEach(img => {
+          if (img.naturalWidth === 0 && img.src.includes('img/foto')) {
+            img.onerror();
+          }
+        });
+      }, 1000);
+    }
+
+    // Llamar a inicializar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inicializar);
+    } else {
+      inicializar();
+    }
+
+    // Prevenir problemas de scroll horizontal
+    window.addEventListener('resize', () => {
+      document.body.style.overflowX = 'hidden';
+    });
+
+    console.log('❤️ Página romántica cargada con amor. ¡Espero que le guste! ❤️');
+    console.log('💌 Personaliza los textos en la sección "PERSONALIZACIÓN" del script.');
+  </script>
+</body>
+</html>
